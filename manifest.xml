@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<app name="AntAppMaterialDesign" namespace="PHPAnt\Themes">
+  <file>
+    <name>/var/www/includes/apps/ant-theme-material-design/.git</name>
+    <hash>da39a3ee5e6b4b0d3255bfef95601890afd80709</hash>
+  </file>
+  <file>
+    <name>/var/www/includes/apps/ant-theme-material-design/LICENSE</name>
+    <hash>4c80553b587d05130abb4998a445245c97e2dce8</hash>
+  </file>
+  <file>
+    <name>/var/www/includes/apps/ant-theme-material-design/public.key</name>
+    <hash>675ae42bb395d53f9c3367f98a7a54fb8a5f8069</hash>
+  </file>
+  <file>
+    <name>/var/www/includes/apps/ant-theme-material-design/app.php</name>
+    <hash>19d1a7df5b740e79f1ecd5732a8f1c441f767372</hash>
+  </file>
+  <action>
+    <hook>cli-load-grammar</hook>
+    <function>loadAntAppMaterialDesign</function>
+    <priority>90</priority>
+    <signature>f6cede88539a486eab840a5541e57493ea636c82</signature>
+  </action>
+  <action>
+    <hook>cli-init</hook>
+    <function>declareMySelf</function>
+    <priority>50</priority>
+    <signature>53c84e4cc7f4ce458beb0a0f301e669cfbcda139</signature>
+  </action>
+  <action>
+    <hook>cli-command</hook>
+    <function>processCommand</function>
+    <priority>50</priority>
+    <signature>d44f7e3739770a1c297d1468100728eebf94a8da</signature>
+  </action>
+</app>
