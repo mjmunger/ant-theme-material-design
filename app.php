@@ -6,9 +6,13 @@ namespace PHPAnt\Themes;
  * App Name: PHP Ant Material Design Theme
  * App Description: This app uses the Google Material Design as a Theme for PHP Ant
  * App Version: 1.0
- * App Action: cli-load-grammar -> loadAntAppMaterialDesign @ 90
- * App Action: cli-init         -> declareMySelf  @ 50
- * App Action: cli-command      -> processCommand @ 50
+ * App Action: cli-load-grammar   -> loadAntAppMaterialDesign @ 90
+ * App Action: cli-init           -> declareMySelf            @ 50
+ * App Action: cli-command        -> processCommand           @ 50
+ * App Action: include-navigation -> includeNavigation        @ 50
+ * App Action: show-dashboard     -> showDashboard            @ 50
+ * App Action: include-footer     -> includeFooter            @ 50
+ * App Action: get-site-name      -> getSiteName              @ 50
  */
 
  /**
@@ -115,5 +119,26 @@ class AntAppMaterialDesign extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\A
         return ['success' => true];
     }
 
+    function includeNavigation($args) {
+        $Engine = $args['AE'];
 
+        include(__DIR__ . '/resources/header.php');
+        return ['success' => true];
+    }
+
+    function showDashboard($args) {
+        //include(__DIR__ . '/resources/dashboard.php');
+        return ['success' => true];
+    }
+
+    function includeFooter($args) {
+        include(__DIR__ . '/resources/footer.php');
+        return ['success' => true];
+    }
+
+    function getSiteName($args) {
+        $sitename = $args['AE']->Configs->getConfigs(['sitename'])['sitename'];
+        echo $sitename;
+        return ['success' => true];
+    }    
 }
